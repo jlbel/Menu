@@ -51,14 +51,19 @@ namespace WpfApp1
             price4.Text = menuItems[3].Price;
             item5.Text = menuItems[4].Description;
             price5.Text = menuItems[4].Price;
-            item6.Text = menuItems[5].Description;
-            price6.Text = menuItems[5].Price;
-
+         
             MenuItem specialMenuItem = new MenuItem();
             specialMenuItem.Proteins = new string[] { "Organic ham", "Mushroom patty", "Mortadella" };
             specialMenuItem.Bread = new string[] { "a gluten free roll", "a wrap", "pita" };
             specialMenuItem.Condiments = new string[] { "dijon mustard", "miso dressing", "au jus" };
-            
+            specialMenuItem.Generate();
+            item6.Text = specialMenuItem.Description;
+            price6.Text = specialMenuItem.Price;
+            MenuItem guacamoleMenuItem = new MenuItem();
+            guacamoleMenuItem.Generate();
+            guacamolePrise = guacamoleMenuItem.Price;
+            guacamole.Text = "Add guacamole for " + guacamoleMenuItem.Price;
+
         }
     }
 }
